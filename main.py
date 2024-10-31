@@ -1,8 +1,6 @@
 import discord
 from discord.ext import tasks, commands
-
-# Replace with your bot token
-TOKEN = 'YOUR_BOT_TOKEN'
+import os
 
 intents = discord.Intents.default()
 intents.members = True  # Enable members intent
@@ -26,8 +24,8 @@ async def update_status():
     total_members = sum(guild.member_count for guild in bot.guilds)
 
     # Define the two custom statuses
-    status_one = discord.CustomActivity(name=f"{total_members} members")  # Custom status with member count
-    status_two = discord.CustomActivity(name="Playing with code!")  # Your other status
+    status_one = discord.CustomActivity(name=f"Watching {total_members} Members")  # Custom status with member count
+    status_two = discord.CustomActivity(name="Listening to VFC Network!")  # Your other status
 
     # Rotate between the two statuses
     if status_counter % 2 == 0:
@@ -40,5 +38,4 @@ async def update_status():
     # Increment the counter
     status_counter += 1
 
-# Run the bot with your token
-bot.run(TOKEN)
+bot.run(os.environ['TOKEN'])
