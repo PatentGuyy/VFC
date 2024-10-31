@@ -1,3 +1,0 @@
-os
-discord
-discord.ext import tasks, commands
