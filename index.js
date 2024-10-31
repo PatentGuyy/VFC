@@ -26,10 +26,6 @@ app.listen(port, () => {
   console.log(`🔗 Powered By RTX`);
 });
 
-client.on('ready', () => {
-    const guild = client.guilds.cache.get('1298998008519852102');
-    if (guild) {
-        const totalMembers = guild.memberCount;
 const statusMessages = ["Listening to VFC Network","Watching ${totalMembers} online"];
 
 
