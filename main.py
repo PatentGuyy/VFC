@@ -38,4 +38,4 @@ async def update_status():
     # Increment the counter
     status_counter += 1
 
-bot.run['TOKEN']
+bot.run(os.environ['TOKEN'])
